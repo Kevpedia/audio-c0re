@@ -1,3 +1,4 @@
+require('dotenv').config();
 module.exports = {
   siteMetadata: {
     title: 'AudioC0RE',
@@ -6,8 +7,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-contentful',
       options: {
-        accessToken: 'tQ9ua8F7bSvtT-rSe3ousPBFFC-MsYmDHlMWTdt-mdE',
-        spaceId: '6w7ipsusex2z',
+        accessToken: process.env.CONTENTFUL_TOKEN,
+        spaceId: process.env.CONTENTFUL_SPACEID,
       },
     },
     'gatsby-plugin-sharp',
