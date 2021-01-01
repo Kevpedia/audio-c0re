@@ -13,8 +13,8 @@ const IndexPage = () => {
   return (
     <Layout>
       <main style={pageStyles}>
-        <h1>Home Page</h1>
-        <p>We do headphones and stuff...</p>
+        <h1>About Page</h1>
+        <p>about us? we're awesome! 'nuf said...</p>
       </main>
     </Layout>
   );
