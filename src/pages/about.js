@@ -14,6 +14,7 @@ const IndexPage = () => {
     <Layout>
       <main style={pageStyles}>
         <h1>About Page</h1>
+        <p>about us? we're awesome! 'nuf said...</p>
       </main>
     </Layout>
   );
