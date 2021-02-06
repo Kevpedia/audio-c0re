@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql, Link } from 'gatsby';
+import { Container, Button, ButtonGroup } from '@chakra-ui/react';
 
 const headerLinksStyle = {
   margin: `1rem`,
@@ -16,17 +17,17 @@ const Header = ({ siteTitle }) => (
       }}
       className='header-container'>
       <title>{siteTitle}</title>
-      <div>
+      <ButtonGroup variant='solid' colorScheme='teal'>
         <Link style={headerLinksStyle} to='/'>
-          Home
+          <Button>Home</Button>
         </Link>
         <Link style={headerLinksStyle} to='/about'>
-          About Us
+          <Button>About Us</Button>
         </Link>
         <Link style={headerLinksStyle} to='/locations'>
-          Locations
+          <Button>Locations</Button>
         </Link>
-      </div>
+      </ButtonGroup>
     </div>
   </header>
 );
@@ -46,15 +47,17 @@ const Layout = ({ children }) => (
       <>
         <Header siteTitle={data.site.siteMetadata.title} />
         {console.log(data)}
-        <div
+        {/* <div
           className='layout-body'
           style={{
             maxWidth: `968px`,
             margin: `0 auto`,
-          }}>
+          }}> */}
+        <Container maxW='xl' centerContent>
           <main>{children}</main>
-          <br />
-        </div>
+        </Container>
+        <br />
+        {/* </div> */}
       </>
     )}
   />
