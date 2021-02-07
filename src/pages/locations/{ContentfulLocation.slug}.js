@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Layout from '../../components/layout';
 import { graphql } from 'gatsby';
+import { Box } from '@chakra-ui/react';
 
 // styles
 const pageStyles = {
@@ -13,10 +14,10 @@ const pageStyles = {
 const LocationPage = ({ data, params }) => {
   return (
     <Layout>
-      <main style={pageStyles}>
+      <Box as='div'>
         <h1>{data.contentfulLocation.name}</h1>
         <p>It's a place, and we're there!</p>
-      </main>
+      </Box>
     </Layout>
   );
 };
