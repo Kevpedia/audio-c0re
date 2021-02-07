@@ -12,7 +12,12 @@ module.exports = {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
       },
     },
-    '@chakra-ui/gatsby-plugin',
+    {
+      resolve: '@chakra-ui/gatsby-plugin',
+      options: {
+        isUsingColorMode: true,
+      },
+    },
     'gatsby-plugin-sharp',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
