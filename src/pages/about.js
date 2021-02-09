@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Layout from '../components/layout';
+import { Box } from '@chakra-ui/react';
 
 // styles
 const pageStyles = {
@@ -12,10 +13,10 @@ const pageStyles = {
 const IndexPage = () => {
   return (
     <Layout>
-      <main style={pageStyles}>
+      <Box as='div'>
         <h1>About Page</h1>
         <p>about us? we're awesome! 'nuf said...</p>
-      </main>
+      </Box>
     </Layout>
   );
 };
