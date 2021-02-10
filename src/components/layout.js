@@ -36,6 +36,9 @@ const Header = ({ siteTitle, locations }) => (
         <Link style={headerLinksStyle} to='/about'>
           <Button>About Us</Button>
         </Link>
+        <Link style={headerLinksStyle} to='/contact'>
+          <Button>Contact</Button>
+        </Link>
         <Box style={headerLinksStyle}>
           <Menu>
             <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
