@@ -23,7 +23,7 @@ const TextInput = (props) => {
 
 const SubmitButton = ({ props, children }) => {
   return (
-    <Button colorScheme='teal' {...props}>
+    <Button as={defaultComponents.SubmitButton} colorScheme='teal' {...props}>
       {children}
     </Button>
   );
