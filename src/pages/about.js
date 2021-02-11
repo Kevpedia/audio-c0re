@@ -1,17 +1,18 @@
 import * as React from 'react';
 import Layout from '../components/layout';
-import { Box } from '@chakra-ui/react';
+import { Stack, Heading, Divider } from '@chakra-ui/react';
 
 // markup
-const IndexPage = () => {
+const AboutPage = () => {
   return (
     <Layout>
-      <Box as='div'>
-        <h1>About Page</h1>
+      <Stack as='div' spacing={3} p={4} centerContent>
+        <Heading>About Page</Heading>
+        <Divider />
         <p>about us? we're awesome! 'nuf said...</p>
-      </Box>
+      </Stack>
     </Layout>
   );
 };
 
-export default IndexPage;
+export default AboutPage;

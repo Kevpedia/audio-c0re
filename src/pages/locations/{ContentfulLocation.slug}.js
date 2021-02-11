@@ -1,23 +1,17 @@
 import * as React from 'react';
 import Layout from '../../components/layout';
 import { graphql } from 'gatsby';
-import { Box } from '@chakra-ui/react';
-
-// styles
-const pageStyles = {
-  color: '#232129',
-  padding: '96px',
-  fontFamily: '-apple-system, Roboto, sans-serif, serif',
-};
+import { Stack, Heading, Divider } from '@chakra-ui/react';
 
 // markup
 const LocationPage = ({ data, params }) => {
   return (
     <Layout>
-      <Box as='div'>
-        <h1>{data.contentfulLocation.name}</h1>
+      <Stack spacing={3} p={4} as='div' centerContent>
+        <Heading>{data.contentfulLocation.name}</Heading>
+        <Divider />
         <p>It's a place, and we're there!</p>
-      </Box>
+      </Stack>
     </Layout>
   );
 };

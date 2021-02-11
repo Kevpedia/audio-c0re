@@ -87,7 +87,13 @@ const Layout = ({ children }) => (
           siteTitle={data.site.siteMetadata.title}
           locations={data.allContentfulLocation.nodes}
         />
-        <Container as='main' m={2} maxW='xl' centerContent>
+        <Container
+          as='main'
+          w='100%'
+          // maxW='xl'
+          centerContent
+          // alignContent='center'
+        >
           {children}
         </Container>
       </>

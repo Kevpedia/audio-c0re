@@ -1,6 +1,13 @@
 import * as React from 'react';
 import Layout from '../components/layout';
 import { graphql, Link } from 'gatsby';
+import {
+  Stack,
+  Heading,
+  Divider,
+  UnorderedList,
+  ListItem,
+} from '@chakra-ui/react';
 
 // styles
 const pageStyles = {
@@ -13,18 +20,19 @@ const pageStyles = {
 const IndexPage = ({ data }) => {
   return (
     <Layout>
-      <main style={pageStyles}>
-        <h1>Locations</h1>
-        <ul>
+      <Stack spacing={3} p={4} as='div' centerContent>
+        <Heading>Locations</Heading>
+        <Divider />
+        <UnorderedList>
           {data.allContentfulLocation.nodes.map((location) => {
             return (
-              <li id={location.id}>
+              <ListItem id={location.id}>
                 <Link to={`/locations/${location.slug}`}>{location.name}</Link>
-              </li>
+              </ListItem>
             );
           })}
-        </ul>
-      </main>
+        </UnorderedList>
+      </Stack>
     </Layout>
   );
 };

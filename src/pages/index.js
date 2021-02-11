@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Layout from '../components/layout';
-import { Box } from '@chakra-ui/react';
+import { Stack, Heading, Divider } from '@chakra-ui/react';
 
 // styles
 const pageStyles = {
@@ -13,10 +13,11 @@ const pageStyles = {
 const IndexPage = () => {
   return (
     <Layout>
-      <Box as='div'>
-        <h1>Home Page</h1>
+      <Stack spacing={3} p={4} as='div' centerContent>
+        <Heading>Home Page</Heading>
+        <Divider />
         <p>We do headphones and stuff...</p>
-      </Box>
+      </Stack>
     </Layout>
   );
 };
