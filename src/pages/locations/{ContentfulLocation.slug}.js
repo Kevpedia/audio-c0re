@@ -12,6 +12,12 @@ const LocationPage = ({ data, params }) => {
       <Stack spacing={3} p={4} as='div' centerContent>
         <Heading>{data.contentfulLocation.name}</Heading>
         <Divider />
+        {data.contentfulLocation.skylineImage && (
+          <img
+            src={data.contentfulLocation.skylineImage.file.url}
+            alt={data.contentfulLocation.skylineImage.description}
+          />
+        )}
         <p>It's a place, and we're there!</p>
       </Stack>
     </Layout>
@@ -24,6 +30,14 @@ export const query = graphql`
       slug
       id
       name
+      skylineImage {
+        id
+        title
+        description
+        file {
+          url
+        }
+      }
     }
   }
 `;
