@@ -25,7 +25,7 @@ const headerLinksStyle = {
 const Header = ({ siteTitle, locations }) => (
   <Box as='header' background='teal.100' px={4} m={2} borderRadius='lg'>
     <Flex as='div' className='header-container' direction='row'>
-      <Heading as='h1' m={4} as='title' display='initial' color='teal.600'>
+      <Heading m={4} as='title' display='initial' color='teal.600'>
         {siteTitle}
       </Heading>
       <Spacer />

@@ -8,18 +8,13 @@ import {
   UnorderedList,
   ListItem,
 } from '@chakra-ui/react';
-
-// styles
-const pageStyles = {
-  color: '#232129',
-  padding: '96px',
-  fontFamily: '-apple-system, Roboto, sans-serif, serif',
-};
+import SEO from '../components/seo';
 
 // markup
 const IndexPage = ({ data }) => {
   return (
     <Layout>
+      <SEO title='Locations' />
       <Stack spacing={3} p={4} as='div' centerContent>
         <Heading>Locations</Heading>
         <Divider />

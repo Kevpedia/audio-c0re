@@ -10,6 +10,7 @@ import {
 } from '@chakra-ui/react';
 import { FormiumForm, defaultComponents } from '@formium/react';
 import { formium } from '../lib/formium';
+import SEO from '../components/seo';
 
 const slug = 'contact';
 
@@ -70,6 +71,7 @@ const ContactForm = ({ data }) => {
 const ContactPage = ({ data }) => {
   return (
     <Layout>
+      <SEO title='Contact Us' />
       <Box
         as='div'
         p={8}

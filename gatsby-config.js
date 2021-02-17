@@ -2,6 +2,10 @@ require('dotenv').config();
 module.exports = {
   siteMetadata: {
     title: 'AudioC0RE',
+    titleTemplate: '%s - AudioC0re Headphones',
+    description: '',
+    image: '',
+    twitterUsername: '@audioc0re',
     siteUrl: 'https://www.audioC0re.com',
   },
   plugins: [

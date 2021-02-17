@@ -1,18 +1,13 @@
 import * as React from 'react';
 import Layout from '../components/layout';
 import { Stack, Heading, Divider } from '@chakra-ui/react';
-
-// styles
-const pageStyles = {
-  color: '#232129',
-  padding: '96px',
-  fontFamily: '-apple-system, Roboto, sans-serif, serif',
-};
+import SEO from '../components/seo';
 
 // markup
 const IndexPage = () => {
   return (
     <Layout>
+      <SEO title='Home' titleTemplate='%s | Audio-C0re Headphone Rentals' />
       <Stack spacing={3} p={4} as='div' centerContent>
         <Heading>Home Page</Heading>
         <Divider />
