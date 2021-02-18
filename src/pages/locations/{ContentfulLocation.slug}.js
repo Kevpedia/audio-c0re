@@ -3,26 +3,7 @@ import Layout from '../../components/layout';
 import { graphql } from 'gatsby';
 import { Stack, Heading, Divider } from '@chakra-ui/react';
 import SEO from '../../components/seo';
-
-// markup
-const LocationPage = ({ data, params }) => {
-  return (
-    <Layout>
-      <SEO title={data.contentfulLocation.name} />
-      <Stack spacing={3} p={4} as='div' centerContent>
-        <Heading>{data.contentfulLocation.name}</Heading>
-        <Divider />
-        {data.contentfulLocation.skylineImage && (
-          <img
-            src={data.contentfulLocation.skylineImage.file.url}
-            alt={data.contentfulLocation.skylineImage.description}
-          />
-        )}
-        <p>It's a place, and we're there!</p>
-      </Stack>
-    </Layout>
-  );
-};
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 export const query = graphql`
   query($id: String) {
@@ -31,15 +12,37 @@ export const query = graphql`
       id
       name
       skylineImage {
+        gatsbyImageData(
+          width: 1920
+          placeholder: BLURRED
+          formats: [AUTO, WEBP, AVIF]
+        )
         id
-        title
         description
-        file {
-          url
-        }
       }
     }
   }
 `;
+
+const HeroImage = ({ image }) => {
+  return <GatsbyImage image={image.gatsbyImageData} alt={image.description} />;
+};
+
+// markup
+const LocationPage = ({ data, params }) => {
+  return (
+    <Layout>
+      <SEO title={data.contentfulLocation.name} />
+      <Stack spacing={3} p={4} width='100%' as='div'>
+        <Heading>{data.contentfulLocation.name}</Heading>
+        <Divider />
+        {data.contentfulLocation.skylineImage && (
+          <HeroImage image={data.contentfulLocation.skylineImage} />
+        )}
+        <p>It's a place, and we're there!</p>
+      </Stack>
+    </Layout>
+  );
+};
 
 export default LocationPage;
