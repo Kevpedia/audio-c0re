@@ -51,5 +51,18 @@ module.exports = {
         accessToken: process.env.FORMIUM_TOKEN,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `AudioC0re Headphone Rentals`,
+        short_name: `AudioC0re`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#16BFBD`,
+        display: `standalone`,
+        icon: `/src/images/icon.png`,
+      },
+    },
+    'gatsby-plugin-offline',
   ],
 };
