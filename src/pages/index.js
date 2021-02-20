@@ -23,9 +23,10 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title='Home' titleTemplate='%s | Audio-C0re Headphone Rentals' />
-      <Stack spacing={3} p={4} as='div' centerContent>
-        <Divider />
+      <Stack maxWidth='3xl' spacing={3} p={4} as='div' centerContent>
         <HeroImage image={data.contentfulHomePageContent.heroImage} />
+        <Divider />
+        <Heading>Headphones When You Need Them!</Heading>
         <p>We do headphones and stuff...</p>
       </Stack>
     </Layout>
