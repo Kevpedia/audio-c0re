@@ -7,11 +7,12 @@ import {
 import React from 'react'
 export default function ThemeToggle() {
   const { toggleColorMode: toggleMode } = useColorMode()
-  const ToggleIcon = useColorModeValue(SunIcon, MoonIcon)
+  const ToggleIcon = useColorModeValue(MoonIcon,SunIcon)
+  const iconColor = useColorModeValue('teal.500', 'teal.600')
   return (
     <IconButton
       icon={<ToggleIcon />}
-    //   variant="ghost"
+      color={iconColor}
       aria-label="Toggle Theme"
       onClick={toggleMode}
     />
