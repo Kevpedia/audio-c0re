@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Layout from '../../components/layout';
 import { graphql } from 'gatsby';
-import { Stack, Heading, Divider } from '@chakra-ui/react';
+import { Stack, Heading, Divider, Box } from '@chakra-ui/react';
 import SEO from '../../components/seo';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
@@ -25,7 +25,16 @@ export const query = graphql`
 `;
 
 const HeroImage = ({ image }) => {
-  return <GatsbyImage image={image.gatsbyImageData} alt={image.description} />;
+  return (
+    <>
+      <Box
+        as={GatsbyImage}
+        rounded='lg'
+        image={image.gatsbyImageData}
+        alt={image.description}
+      />
+    </>
+  );
 };
 
 // markup
@@ -33,7 +42,7 @@ const LocationPage = ({ data, params }) => {
   return (
     <Layout>
       <SEO title={data.contentfulLocation.name} />
-      <Stack spacing={3} p={4} width='100%' as='div'>
+      <Stack spacing={3} p={4} maxWidth='3xl' as='div'>
         <Heading>{data.contentfulLocation.name}</Heading>
         <Divider />
         {data.contentfulLocation.skylineImage && (
