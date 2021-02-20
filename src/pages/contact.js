@@ -8,6 +8,7 @@ import {
   Input,
   Textarea,
   Button,
+  Stack,
 } from '@chakra-ui/react';
 import { FormiumForm, defaultComponents } from '@formium/react';
 import { formium } from '../lib/formium';
@@ -25,7 +26,11 @@ const TextInput = (props) => {
 
 const SubmitButton = ({ props, children }) => {
   return (
-    <Button as={defaultComponents.SubmitButton} colorScheme='teal' {...props}>
+    <Button
+      as={defaultComponents.SubmitButton}
+      colorScheme='teal'
+      mx='auto'
+      {...props}>
       {children}
     </Button>
   );
@@ -75,14 +80,24 @@ const ContactPage = ({ data }) => {
       <SEO title='Contact Us' />
       <Box
         as='div'
+        display='flex'
+        flexDirection='column'
+        alignItems='center'
+        justifyContent='space-between'
         p={8}
         mx={'auto'}
         my={2}
         borderWidth='1px'
-        borderRadius='lg'
-        centerContent>
+        borderRadius='lg'>
         <Heading py={1}>Contact Us</Heading>
-        <ContactForm data={data} />
+        <Stack
+          as={ContactForm}
+          display='flex'
+          flexDirection='column'
+          alignItems='center'
+          justifyContent='space-between'
+          data={data}
+        />
       </Box>
     </Layout>
   );
